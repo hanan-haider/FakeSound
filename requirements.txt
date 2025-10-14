@@ -28,10 +28,13 @@ pandas>=2.2.0
 scikit-learn>=1.4.0
 matplotlib>=3.8.2
 tqdm>=4.66.1
-omegaconf>=2.0.6
+
+
+omegaconf>=2.3.0
 einops>=0.7.0
 fire>=0.5.0
 wandb>=0.16.3
+
 
 # Hugging Face tools
 datasets>=2.16.1
