@@ -14,9 +14,12 @@ import torchaudio
 from torch.utils.data import Dataset, DataLoader
 from transformers import SchedulerType, get_scheduler
 
-import sys
-WORKSPACE_PATH = "WORKSPACE_PATH"
-sys.path.extend([WORKSPACE_PATH])
+import os
+
+# Define WORKSPACE_PATH dynamically (works for Kaggle)
+WORKSPACE_PATH = os.path.abspath("/kaggle/working/fakesound")
+os.environ["WORKSPACE_PATH"] = WORKSPACE_PATH
+
 
 from models import detection_model
 def parse_args():
