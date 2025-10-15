@@ -6,11 +6,12 @@ import numpy as np
 from dataclasses import dataclass
 from torch.autograd import Variable
 import os
+import sys
 
-# Define WORKSPACE_PATH - adjust the path according to your setup
-WORKSPACE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# Or use a fixed path:
-# WORKSPACE_PATH = "/kaggle/working/fakesound"
+WORKSPACE_PATH = "/kaggle/working/fakesound"  # Your actual path
+os.environ['WORKSPACE_PATH'] = WORKSPACE_PATH
+sys.path.extend([WORKSPACE_PATH])
+
 
 ####################################
 #       Model utils
@@ -273,12 +274,8 @@ class UserDirModule:
 class EAT_Detection(BaseDetectionModel):
     def __init__(self, embed_dim=128, in_planes=768, multi_task=False):
         super().__init__(embed_dim=128, in_planes=in_planes, multi_task=multi_task)
-
-        import sys
-        # Set default workspace path if not provided
-        if workspace_path is None:
-            workspace_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         
+        import sys
         FAIRSEQ_PATH = f"{WORKSPACE_PATH}/models/EAT/fairseq"
         sys.path.append(FAIRSEQ_PATH)
         import fairseq
