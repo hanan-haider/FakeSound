@@ -277,7 +277,7 @@ class EAT_Detection(BaseDetectionModel):
         import sys
         # Set default workspace path if not provided
         if workspace_path is None:
-        workspace_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            workspace_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         
         FAIRSEQ_PATH = f"{WORKSPACE_PATH}/models/EAT/fairseq"
         sys.path.append(FAIRSEQ_PATH)
