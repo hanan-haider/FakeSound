@@ -18,7 +18,7 @@ import os
 
 # Define WORKSPACE_PATH dynamically (works for Kaggle)
 WORKSPACE_PATH = os.path.abspath("/kaggle/working/fakesound")
-os.environ["WORKSPACE_PATH"] = WORKSPACE_PATH
+#os.environ["WORKSPACE_PATH"] = WORKSPACE_PATH
 
 
 from models import detection_model
